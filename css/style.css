@@ -148,9 +148,41 @@ nav.scrolled {
   padding: 0.9rem 0 1.5rem;
 }
 
+/* ==================== BOTANICAL / NATURE ==================== */
+
+.masthead-inner {
+  position: relative;
+}
+
+.masthead-sprig {
+  position: absolute;
+  top: 1.5rem;
+  color: var(--dim);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.masthead-sprig--left  { left: 3rem; }
+.masthead-sprig--right { right: 3rem; transform: scaleX(-1); }
+
+.ornament-sprig {
+  color: var(--dim);
+  flex-shrink: 0;
+}
+
+.deck-bird {
+  position: absolute;
+  top: 2.25rem;
+  right: 3rem;
+  color: var(--dim);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 /* ==================== DECK ==================== */
 
 .deck {
+  position: relative;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--bg);
