@@ -10,14 +10,14 @@
 }
 
 :root {
-  --bg:       #dce4eb;  /* pale misty fog / sky */
-  --bg-off:   #cdd7de;  /* slightly deeper mist */
+  --bg:       #eef3f6;  /* pale misty sky — nearly white blue */
+  --bg-off:   #e3ecf1;  /* slightly deeper mist */
   --bg-dark:  #1c2024;  /* charcoal rocks */
   --text:     #1c2024;  /* dark charcoal */
   --muted:    #546878;  /* mid atmospheric blue-grey */
   --dim:      #8aa0ae;  /* hazy light grey */
   --accent:   #4a6d80;  /* deep atmospheric slate-blue */
-  --border:   #afbfc8;  /* pale blue-grey border */
+  --border:   #c2d0d8;  /* pale blue-grey border */
 
   --serif: Georgia, 'Times New Roman', serif;
   --sans:  system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif;
@@ -51,7 +51,7 @@ nav {
 }
 
 nav.scrolled {
-  background: rgba(220, 228, 235, 0.96);
+  background: rgba(238, 243, 246, 0.96);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
@@ -149,11 +149,50 @@ nav.scrolled {
   padding: 0.9rem 0 1.5rem;
 }
 
+/* ==================== PAINTING ==================== */
+
+.editorial-painting {
+  position: relative;
+  height: 58vh;
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.editorial-painting img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  display: block;
+}
+
+.editorial-painting::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+}
+
+.editorial-painting-credit {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 2rem;
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
 /* ==================== DECK ==================== */
 
 .deck {
   position: relative;
-  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--bg);
 }
@@ -259,7 +298,7 @@ nav.scrolled {
 .featured-label-line {
   flex: 1;
   height: 1px;
-  background: rgba(220, 228, 235, 0.2);
+  background: rgba(238, 243, 246, 0.2);
 }
 
 .featured-label {
@@ -313,7 +352,7 @@ nav.scrolled {
   font-style: italic;
   font-size: 1rem;
   line-height: 1.85;
-  color: rgba(220, 228, 235, 0.6);
+  color: rgba(238, 243, 246, 0.6);
   border: none;
   padding: 0;
 }
