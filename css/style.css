@@ -157,16 +157,22 @@ nav.scrolled {
 .masthead-sprig {
   position: absolute;
   top: 1.5rem;
-  color: var(--dim);
-  opacity: 0.55;
+  width: 72px;
+  height: 72px;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
-.masthead-sprig--left  { left: 3rem; }
-.masthead-sprig--right { right: 3rem; transform: scaleX(-1); }
+.masthead-sprig--left  { left: 3rem;  transform: rotate(-45deg); }
+.masthead-sprig--right { right: 3rem; transform: scaleX(-1) rotate(-45deg); }
 
 .ornament-sprig {
-  color: var(--dim);
+  width: 32px;
+  height: 32px;
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  transform: rotate(-45deg);
   flex-shrink: 0;
 }
 
