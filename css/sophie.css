@@ -122,10 +122,10 @@ nav.scrolled {
 }
 
 .masthead-name {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--sans);
+  font-weight: 300;
   font-size: clamp(3.75rem, 10vw, 8rem);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   line-height: 1;
   color: var(--text);
   padding: 0.5rem 0;
