@@ -167,14 +167,6 @@ nav.scrolled {
 .masthead-sprig--left  { left: 3rem;  transform: rotate(-45deg); }
 .masthead-sprig--right { right: 3rem; transform: scaleX(-1) rotate(-45deg); }
 
-.ornament-sprig {
-  width: 32px;
-  height: 32px;
-  opacity: 0.45;
-  mix-blend-mode: multiply;
-  transform: rotate(-45deg);
-  flex-shrink: 0;
-}
 
 .deck-bird {
   position: absolute;
@@ -381,9 +373,9 @@ nav.scrolled {
 }
 
 .ornament-sym {
-  font-size: 0.6rem;
-  color: var(--dim);
-  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  color: var(--text);
+  flex-shrink: 0;
 }
 
 /* ==================== SECTION STRUCTURE ==================== */
