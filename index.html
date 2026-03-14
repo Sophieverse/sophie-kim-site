@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,32 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<div class="floral-container">
+  <svg class="floral floral-1" viewBox="0 0 100 100" fill="none">
+    <path class="stem" d="M50 100 Q45 70 50 50 Q55 30 45 0" stroke="currentColor" stroke-width="1" fill="none"/>
+    <circle class="petal" cx="45" cy="15" r="8" fill="currentColor" opacity="0.6"/>
+    <circle class="petal" cx="55" cy="20" r="6" fill="currentColor" opacity="0.5"/>
+    <circle class="petal" cx="40" cy="25" r="5" fill="currentColor" opacity="0.4"/>
+    <path class="leaf" d="M50 60 Q35 55 30 45 Q40 50 50 55" fill="currentColor" opacity="0.5"/>
+    <path class="leaf" d="M50 75 Q65 70 70 60 Q60 68 50 72" fill="currentColor" opacity="0.4"/>
+  </svg>
+  <svg class="floral floral-2" viewBox="0 0 100 100" fill="none">
+    <path class="stem" d="M50 100 Q60 65 50 40 Q40 20 55 0" stroke="currentColor" stroke-width="1" fill="none"/>
+    <circle class="petal" cx="55" cy="12" r="7" fill="currentColor" opacity="0.5"/>
+    <circle class="petal" cx="48" cy="18" r="5" fill="currentColor" opacity="0.6"/>
+    <circle class="petal" cx="60" cy="22" r="4" fill="currentColor" opacity="0.4"/>
+    <path class="leaf" d="M52 50 Q38 48 32 38 Q42 45 52 48" fill="currentColor" opacity="0.45"/>
+    <path class="leaf" d="M48 70 Q62 65 68 55 Q58 63 48 68" fill="currentColor" opacity="0.5"/>
+  </svg>
+  <svg class="floral floral-3" viewBox="0 0 100 100" fill="none">
+    <path class="stem" d="M50 100 Q42 75 50 55 Q58 35 48 5" stroke="currentColor" stroke-width="1" fill="none"/>
+    <circle class="petal" cx="48" cy="18" r="9" fill="currentColor" opacity="0.55"/>
+    <circle class="petal" cx="56" cy="14" r="6" fill="currentColor" opacity="0.45"/>
+    <circle class="petal" cx="42" cy="22" r="5" fill="currentColor" opacity="0.5"/>
+    <path class="leaf" d="M50 65 Q36 60 30 50 Q40 58 50 62" fill="currentColor" opacity="0.4"/>
+  </svg>
+</div>
 
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
   <span class="sun">☀</span><span class="moon">☽</span>
@@ -42,13 +68,13 @@
     <p class="hero-tagline">
       <em>"tell me, what is it you plan to do<br>with your one wild and precious life?"</em>
     </p>
-    <p class="hero-oneliner">18 &nbsp;✿&nbsp; stanford gap year &nbsp;✿&nbsp; youngest ERA fellow &nbsp;✿&nbsp; builder</p>
+    <p class="hero-oneliner">18 &nbsp;·&nbsp; stanford gap year &nbsp;·&nbsp; youngest ERA fellow &nbsp;·&nbsp; builder</p>
     <div class="hero-cta">
       <a href="#writing" class="btn btn-primary">read my writing</a>
       <a href="#track-record" class="btn btn-secondary">track record</a>
       <a href="#contact" class="btn btn-secondary">get in touch</a>
     </div>
-    <span class="hero-symbol">○ ● ○</span>
+    <span class="hero-symbol">~ ~ ~</span>
   </div>
 </section>
 
@@ -120,108 +146,134 @@
     <h2 class="section-title fade-in">track record</h2>
 
     <p class="act-label fade-in">act i &nbsp;&mdash;&nbsp; i see problems and i build solutions &nbsp;(age 12&ndash;17)</p>
-    <ul class="entries fade-in">
-      <li class="entry">
-        <div class="entry-left">
-          <span class="entry-title">The Clean &amp; Green Initiative</span>
-          <span class="entry-detail">
-            Environmental advocacy org. <strong>700+ members across 30+ countries.</strong>
-            $4K+ in grants. UNESCO Youth Multimedia Contest winner.
-            Featured by Jane Goodall Institute, Blue Shield, Project Green Schools.
-          </span>
+    <div class="cards-grid fade-in">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">The Clean &amp; Green Initiative</span>
+          <span class="card-badge">founded age 12</span>
         </div>
-        <span class="entry-badge">founded age 12</span>
-      </li>
-      <li class="entry">
-        <div class="entry-left">
-          <span class="entry-title">Bipartisan Bridges</span>
-          <span class="entry-detail">
-            8-week cross-partisan dialogue program. <strong>$2.5K grant</strong> (Civics Unplugged pitch contest).
-            Partnered with Braver Angels. Featured in documentary. 8K+ YouTube views.
-          </span>
+        <div class="card-body">
+          Environmental advocacy org. <strong>700+ members across 30+ countries.</strong>
+          $4K+ in grants. UNESCO Youth Multimedia Contest winner.
+          Featured by Jane Goodall Institute, Blue Shield, Project Green Schools.
         </div>
-        <span class="entry-badge">founded age 16</span>
-      </li>
-      <li class="entry">
-        <div class="entry-left">
-          <span class="entry-title">Chains of Hope</span>
-          <span class="entry-detail">
-            Ukraine jewelry fundraiser. <strong>$8K+ raised.</strong> Partnered with UNITED24
-            (Zelenskyy's official platform). 120K+ impressions. 100% of profits donated.
-          </span>
+        <div class="card-stats">
+          <span class="tag">700+ members</span><span class="tag">30+ countries</span><span class="tag">UNESCO winner</span>
         </div>
-        <span class="entry-badge">founded age 17</span>
-      </li>
-      <li class="entry">
-        <div class="entry-left">
-          <span class="entry-title">Valedictorian &amp; Academic</span>
-          <span class="entry-detail">
-            Graduated #1 of 671. 25 college courses via dual enrollment. Associate's Degree in Marketing.
-            <strong>HEC Paris Executive Certification (youngest ever).</strong> 2× TEDx Speaker. Girls Nation delegate. Congressional Gold Medal.
-          </span>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Bipartisan Bridges</span>
+          <span class="card-badge">founded age 16</span>
         </div>
-        <span class="entry-badge">age 17</span>
-      </li>
-    </ul>
+        <div class="card-body">
+          8-week cross-partisan dialogue program. <strong>$2.5K grant</strong> (Civics Unplugged pitch contest).
+          Partnered with Braver Angels. Featured in documentary. 8K+ YouTube views.
+        </div>
+        <div class="card-stats">
+          <span class="tag">$2.5K grant</span><span class="tag">Documentary</span><span class="tag">8K+ views</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Chains of Hope</span>
+          <span class="card-badge">founded age 17</span>
+        </div>
+        <div class="card-body">
+          Ukraine jewelry fundraiser. <strong>$8K+ raised.</strong> Partnered with UNITED24
+          (Zelenskyy's official platform). 120K+ impressions. 100% of profits donated.
+        </div>
+        <div class="card-stats">
+          <span class="tag">$8K+ raised</span><span class="tag">UNITED24</span><span class="tag">120K+ impressions</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Valedictorian &amp; Academic</span>
+          <span class="card-badge">age 17</span>
+        </div>
+        <div class="card-body">
+          Graduated #1 of 671. 25 college courses via dual enrollment. Associate's Degree in Marketing.
+          <strong>HEC Paris Executive Certification (youngest ever).</strong> 2× TEDx Speaker. Girls Nation delegate. Congressional Gold Medal.
+        </div>
+        <div class="card-stats">
+          <span class="tag">Class of 671 #1</span><span class="tag">2× TEDx</span><span class="tag">Gold Medal</span>
+        </div>
+      </div>
+    </div>
 
     <p class="act-label fade-in" style="margin-top: 2.5rem;">act ii &nbsp;&mdash;&nbsp; i found the most important problem &nbsp;(age 17&ndash;18)</p>
-    <ul class="entries fade-in">
-      <li class="entry">
-        <div class="entry-left">
-          <span class="entry-title">ERA Fellowship</span>
-          <span class="entry-detail">
-            <strong>Youngest person ever admitted</strong> to the AIxBio Fellowship at Cambridge, UK.
-            Zero AI safety experience to accepted in under 2 months. &lt;1% acceptance rate.
-            Turned 18 on the flight there. Research: tiered bio access controls, AI-aided biosecurity risks.
-            Built <a href="https://bioweapon.ai" target="_blank" rel="noopener" style="color: var(--accent-dark); border-bottom: 1px solid var(--accent);">bioweapon.ai</a>.
-          </span>
+    <div class="cards-grid fade-in">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">ERA Fellowship</span>
+          <span class="card-badge">youngest ever</span>
         </div>
-        <span class="entry-badge">youngest ever</span>
-      </li>
-      <li class="entry">
-        <div class="entry-left">
-          <span class="entry-title">Midas Project</span>
-          <span class="entry-detail">
-            Veritas Fellow. Authored expanded AI whistleblower guide.
-            Reviewed by <strong>Institute for Law &amp; AI</strong> and AI Whistleblower Initiative.
-          </span>
+        <div class="card-body">
+          <strong>Youngest person ever admitted</strong> to the AIxBio Fellowship at Cambridge, UK.
+          Zero to accepted in under 2 months. &lt;1% acceptance rate. Turned 18 on the flight there.
+          Research: tiered bio access controls, AI-aided biosecurity risks.
+          Built <a href="https://bioweapon.ai" target="_blank" rel="noopener" style="color: var(--accent-dark); border-bottom: 1px solid var(--accent);">bioweapon.ai</a>.
         </div>
-        <span class="entry-badge">veritas fellow</span>
-      </li>
-      <li class="entry">
-        <div class="entry-left">
-          <span class="entry-title">Center for AI Safety</span>
-          <span class="entry-detail">
-            Movement-building &amp; contract writing. <strong>$1K commission</strong> for "loss of control"
-            piece in AI Frontiers.
-          </span>
+        <div class="card-stats">
+          <span class="tag">&lt;1% acceptance</span><span class="tag">Cambridge</span><span class="tag">bioweapon.ai</span>
         </div>
-        <span class="entry-badge">volunteer &amp; writer</span>
-      </li>
-      <li class="entry">
-        <div class="entry-left">
-          <span class="entry-title">Center for Youth &amp; AI</span>
-          <span class="entry-detail">
-            Co-Executive Director. Launching educational video contest for youth on AI's career impacts.
-          </span>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Midas Project</span>
+          <span class="card-badge">Veritas Fellow</span>
         </div>
-        <span class="entry-badge">co-exec director</span>
-      </li>
-    </ul>
+        <div class="card-body">
+          Authored expanded AI whistleblower guide.
+          Reviewed by <strong>Institute for Law &amp; AI</strong> and AI Whistleblower Initiative.
+        </div>
+        <div class="card-stats">
+          <span class="tag">Legal review</span><span class="tag">Policy writing</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Center for AI Safety</span>
+          <span class="card-badge">Volunteer &amp; Writer</span>
+        </div>
+        <div class="card-body">
+          Movement-building &amp; contract writing. <strong>$1K commission</strong> for "loss of control" piece in AI Frontiers.
+        </div>
+        <div class="card-stats">
+          <span class="tag">$1K commission</span><span class="tag">AI Frontiers</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Center for Youth &amp; AI</span>
+          <span class="card-badge">Co-Exec Director</span>
+        </div>
+        <div class="card-body">
+          Co-Executive Director. Launching educational video contest for youth on AI's career impacts.
+        </div>
+        <div class="card-stats">
+          <span class="tag">Leadership</span><span class="tag">AI Education</span>
+        </div>
+      </div>
+    </div>
 
     <p class="act-label fade-in" style="margin-top: 2.5rem;">act iii &nbsp;&mdash;&nbsp; now i'm building &nbsp;(present)</p>
-    <ul class="entries fade-in">
-      <li class="entry current">
-        <div class="entry-left">
-          <span class="entry-title">currently: technically upskilling to build</span>
-          <span class="entry-detail">
-            Stanford gap year. Learning to code. Career plan is unambiguously startups.
-            Applying to EF Summer Residency. The question was never <em>if</em> -- it's just a matter of <em>what and when.</em>
-          </span>
+    <div class="cards-grid fade-in">
+      <div class="card current-card">
+        <div class="card-header">
+          <span class="card-title">currently: technically upskilling to build</span>
+          <span class="card-badge">2026</span>
         </div>
-        <span class="entry-badge">2026</span>
-      </li>
-    </ul>
+        <div class="card-body">
+          Stanford gap year. Learning to code. Career plan is unambiguously startups.
+          Applying to EF Summer Residency. The question was never <em>if</em> -- it's just a matter of <em>what and when.</em>
+        </div>
+        <div class="card-stats">
+          <span class="tag">Stanford Class of 2030</span><span class="tag">Symbolic Systems</span><span class="tag">EF applicant</span>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -334,7 +386,7 @@
           ✉ &nbsp;sophiekim400@gmail.com
         </a>
         <a href="https://curiouslysophie.com" target="_blank" rel="noopener" class="contact-link">
-          ✿ &nbsp;curiouslysophie.com
+          curiouslysophie.com
         </a>
       </div>
     </div>
@@ -344,12 +396,11 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <span class="footer-symbol">🌷</span>
     <span class="footer-text">
       "tell me, what is it you plan to do with your one wild and precious life?"
       &nbsp;&mdash;&nbsp; mary oliver
     </span>
-    <span class="footer-text" style="margin-top: 0.5rem;">sophie kim &nbsp;✿&nbsp; 2026</span>
+    <span class="footer-text" style="margin-top: 0.5rem; color: var(--text-dim);">sophie kim &nbsp;&mdash;&nbsp; 2026</span>
   </div>
 </footer>
 

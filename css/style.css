@@ -384,6 +384,77 @@ section { padding: 5rem 0; }
   letter-spacing: 0.04em;
 }
 
+/* ─── CARDS ──────────────────────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 18px 20px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.card:hover { border-color: var(--accent); background: var(--bg-secondary); }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.card-title {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--accent-dark);
+  line-height: 1.3;
+}
+.card-badge {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--accent-dark);
+  background: rgba(123, 163, 176, 0.12);
+  border: 1px solid var(--accent);
+  padding: 2px 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+.card-body {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+.card-body strong { color: var(--text-muted); font-weight: 400; }
+
+.card-stats { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  letter-spacing: 0.03em;
+}
+
+.current-card {
+  grid-column: 1 / -1;
+  background: rgba(123, 163, 176, 0.08);
+  border-color: var(--accent);
+}
+.current-card .card-title { font-style: normal; }
+
+@media (max-width: 640px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .current-card { grid-column: 1; }
+}
+
 /* Act III highlight */
 .entry.current {
   background: rgba(123, 163, 176, 0.1);
