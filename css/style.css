@@ -969,12 +969,22 @@ footer {
 
 .media-card:hover { background: var(--bg-off); }
 
-.media-card-img {
-  display: block;
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+.media-card-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
   flex-shrink: 0;
+}
+
+.media-card-logo img {
+  max-height: 52px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
 }
 
 .media-card-body {
