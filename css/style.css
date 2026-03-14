@@ -148,35 +148,6 @@ nav.scrolled {
   padding: 0.9rem 0 1.5rem;
 }
 
-/* ==================== BOTANICAL / NATURE ==================== */
-
-.masthead-inner {
-  position: relative;
-}
-
-.masthead-sprig {
-  position: absolute;
-  top: 1.5rem;
-  width: 72px;
-  height: 72px;
-  opacity: 0.4;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
-.masthead-sprig--left  { left: 3rem;  transform: rotate(-45deg); }
-.masthead-sprig--right { right: 3rem; transform: scaleX(-1) rotate(-45deg); }
-
-
-.deck-bird {
-  position: absolute;
-  top: 2.25rem;
-  right: 3rem;
-  color: var(--dim);
-  opacity: 0.3;
-  pointer-events: none;
-}
-
 /* ==================== DECK ==================== */
 
 .deck {
@@ -513,6 +484,9 @@ nav.scrolled {
 }
 
 .act {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1rem;
   padding-bottom: 3rem;
   margin-bottom: 3rem;
   border-bottom: 1px solid var(--border);
@@ -525,10 +499,11 @@ nav.scrolled {
 }
 
 .act-header {
+  grid-column: 1 / -1;
   display: flex;
   align-items: baseline;
   gap: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .act-header-bar {
@@ -551,18 +526,18 @@ nav.scrolled {
 }
 
 .work-item {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-off);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--text);
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
 }
-
-.work-item:first-of-type { border-top: 1px solid var(--border); }
-.work-item:last-child { border-bottom: none; }
 
 .work-item-head {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 0.2rem;
   margin-bottom: 0.6rem;
 }
 
@@ -1075,10 +1050,7 @@ footer {
 }
 
 @media (max-width: 640px) {
-  .work-item-head {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
+  .act { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 540px) {
