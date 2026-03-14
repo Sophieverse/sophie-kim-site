@@ -17,8 +17,7 @@
   --text:     #1c2024;  /* dark charcoal */
   --muted:    #546878;  /* mid atmospheric blue-grey */
   --dim:      #8aa0ae;  /* hazy light grey */
-  --accent:   #6b9fc7;  /* wispy cornflower sky - from the painting's upper mist */
-  --accent-strong: #1e3a8a;  /* dark navy/royal blue - for elements on light bg */
+  --accent:   #1e3a8a;  /* deep navy/royal blue */
   --border:   #c2d0d8;  /* pale blue-grey border */
 
   --serif: Georgia, 'Times New Roman', serif;
@@ -96,7 +95,7 @@ nav.scrolled {
 .masthead-accent-band {
   width: 100%;
   height: 5px;
-  background: var(--accent-strong);
+  background: var(--accent);
 }
 
 .masthead-inner {
@@ -554,7 +553,7 @@ nav.scrolled {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #fff;
-  background: var(--accent-strong);
+  background: var(--accent);
   padding: 0.25rem 0.65rem;
   white-space: nowrap;
   flex-shrink: 0;
@@ -1040,7 +1039,7 @@ footer {
   font-size: 0.6rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent-strong);
+  color: var(--accent);
   margin-bottom: 0.65rem;
 }
 
