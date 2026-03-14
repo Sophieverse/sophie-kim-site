@@ -385,7 +385,7 @@ nav.scrolled {
 
 .ornament-sym {
   font-size: 1.1rem;
-  color: var(--text);
+  color: var(--accent);
   flex-shrink: 0;
 }
 
