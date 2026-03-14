@@ -1,6 +1,7 @@
+@charset "UTF-8";
 /* ==============================================
-   SOPHIE KIM — Editorial / Newspaper
-   Warm newsprint · Georgia serif · Rules & ornaments
+   SOPHIE KIM - Editorial / Newspaper
+   Warm newsprint - Georgia serif - Rules & ornaments
    ============================================== */
 
 *, *::before, *::after {
@@ -10,7 +11,7 @@
 }
 
 :root {
-  --bg:       #eef3f6;  /* pale misty sky — nearly white blue */
+  --bg:       #eef3f6;  /* pale misty sky - nearly white blue */
   --bg-off:   #e3ecf1;  /* slightly deeper mist */
   --bg-dark:  #1c2024;  /* charcoal rocks */
   --text:     #1c2024;  /* dark charcoal */
@@ -886,7 +887,7 @@ footer {
 }
 
 .section-break::after {
-  content: '·   ·   ·';
+  content: '*   *   *';
   color: var(--dim);
   font-size: 0.85rem;
   letter-spacing: 0.5em;
