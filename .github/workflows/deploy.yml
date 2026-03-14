@@ -15,10 +15,11 @@ jobs:
           SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H us-phx-web774.main-hosting.eu >> ~/.ssh/known_hosts
+          ssh-keyscan -p 65002 -T 10 -H us-phx-web774.main-hosting.eu >> ~/.ssh/known_hosts 2>/dev/null || true
           rsync -avz --delete \
+            -e "ssh -p 65002 -o StrictHostKeyChecking=no -o ConnectTimeout=15" \
             --exclude='.git' \
             --exclude='.github' \
             ./ u978264430@us-phx-web774.main-hosting.eu:public_html/
