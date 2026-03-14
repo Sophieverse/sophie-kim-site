@@ -122,8 +122,9 @@ nav.scrolled {
 }
 
 .masthead-name {
-  font-family: 'Quicksand', system-ui, sans-serif;
-  font-weight: 700;
+  font-family: 'IM Fell DW Pica', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
   font-size: clamp(3.75rem, 10vw, 8rem);
   letter-spacing: 0.02em;
   line-height: 1;
