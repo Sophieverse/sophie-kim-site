@@ -44,7 +44,7 @@
   </svg>
 </div>
 
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+<button class="theme-toggle" aria-label="Toggle theme">
   <span class="sun">☀</span><span class="moon">☽</span>
 </button>
 
@@ -405,15 +405,5 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-  function toggleTheme() {
-    const html = document.documentElement;
-    html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', html.dataset.theme);
-  }
-  // Restore saved theme
-  const saved = localStorage.getItem('theme');
-  if (saved) document.documentElement.dataset.theme = saved;
-</script>
 </body>
 </html>

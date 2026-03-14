@@ -2,122 +2,171 @@
 const themeToggle = document.querySelector('.theme-toggle');
 const html = document.documentElement;
 
+// Check for saved theme preference or default to dark
 const savedTheme = localStorage.getItem('theme') || 'dark';
-html.setAttribute('data-theme', savedTheme);
+if (savedTheme === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+}
 
 themeToggle.addEventListener('click', () => {
-  const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
 });
 
-function isDarkMode() {
-  return html.getAttribute('data-theme') === 'dark';
-}
-
-// Nav scroll effect
-const nav = document.querySelector('nav');
-if (nav) {
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-  });
-}
-
-// Fade-in observer
-const fadeEls = document.querySelectorAll('.fade-in');
-if (fadeEls.length) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+// Smooth scroll for navigation links
+document.querySelectorAll('.links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  fadeEls.forEach(el => observer.observe(el));
-}
-
-// ─── FALLING ELEMENTS ──────────────────────────────────────────
-
-const starColors = [
-  '#FFB5E8', '#B5DEFF', '#B5FFB5', '#FFFFB5',
-  '#E0B5FF', '#FFD5B5', '#B5FFF0', '#FFB5B5',
-];
-
-const petalColors = [
-  '#9B59B6', '#8E44AD', '#A569BD', '#7D3C98',
-  '#BB8FCE', '#9063CD', '#7B68EE', '#8B5CF6',
-];
-
-const flowerShapes = ['❀', '✿', '❁', '✾', '❃', '✽', '✼', '❋'];
-const petalShapes  = ['✿', '❀', '❁', '✾'];
-
-function createFlower() {
-  if (isDarkMode()) return;
-  const el = document.createElement('div');
-  el.className = 'falling-flower';
-  el.innerHTML = flowerShapes[Math.floor(Math.random() * flowerShapes.length)];
-  el.style.left = Math.random() * 100 + 'vw';
-  el.style.color = petalColors[Math.floor(Math.random() * petalColors.length)];
-  el.style.fontSize = (14 + Math.random() * 18) + 'px';
-  el.style.animationDuration = (10 + Math.random() * 10) + 's';
-  el.style.opacity = 0.5 + Math.random() * 0.4;
-  document.body.appendChild(el);
-  setTimeout(() => el.remove(), 20000);
-}
-
-function createStar() {
-  if (!isDarkMode()) return;
-  const el = document.createElement('div');
-  el.className = 'falling-star';
-  el.innerHTML = '★';
-  el.style.left = Math.random() * 100 + 'vw';
-  el.style.color = starColors[Math.floor(Math.random() * starColors.length)];
-  el.style.fontSize = (12 + Math.random() * 16) + 'px';
-  el.style.animationDuration = (8 + Math.random() * 8) + 's';
-  el.style.opacity = 0.6 + Math.random() * 0.4;
-  document.body.appendChild(el);
-  setTimeout(() => el.remove(), 16000);
-}
-
-// Cursor trail
-let lastTrailTime = 0;
-document.addEventListener('mousemove', (e) => {
-  const now = Date.now();
-  if (now - lastTrailTime < 50) return;
-  lastTrailTime = now;
-
-  const p = document.createElement('div');
-  p.className = 'cursor-trail';
-
-  if (isDarkMode()) {
-    p.innerHTML = '✦';
-    p.style.color = starColors[Math.floor(Math.random() * starColors.length)];
-    p.style.fontSize = (8 + Math.random() * 8) + 'px';
-    p.style.textShadow = '0 0 5px currentColor';
-  } else {
-    p.innerHTML = petalShapes[Math.floor(Math.random() * petalShapes.length)];
-    p.style.color = petalColors[Math.floor(Math.random() * petalColors.length)];
-    p.style.fontSize = (10 + Math.random() * 10) + 'px';
-  }
-
-  p.style.left = e.clientX + 'px';
-  p.style.top  = e.clientY + 'px';
-  p.style.setProperty('--drift-x', ((Math.random() - 0.5) * 30) + 'px');
-  p.style.setProperty('--drift-y', (20 + Math.random() * 30) + 'px');
-  p.style.setProperty('--rotate',  (Math.random() * 360) + 'deg');
-
-  document.body.appendChild(p);
-  setTimeout(() => p.remove(), 1000);
 });
 
-// Periodic spawning
+// Check if dark mode
+function isDarkMode() {
+    return html.getAttribute('data-theme') === 'dark';
+}
+
+// Pastel star colors (for dark mode)
+const starColors = [
+    '#FFB5E8', // pink
+    '#B5DEFF', // blue
+    '#B5FFB5', // green
+    '#FFFFB5', // yellow
+    '#E0B5FF', // purple
+    '#FFD5B5', // peach
+    '#B5FFF0', // mint
+    '#FFB5B5', // coral
+];
+
+// Petal/flower colors (for light mode) - purple tones
+const petalColors = [
+    '#9B59B6', // amethyst
+    '#8E44AD', // deep purple
+    '#A569BD', // medium orchid
+    '#7D3C98', // dark violet
+    '#BB8FCE', // soft purple
+    '#9063CD', // medium purple
+    '#7B68EE', // medium slate blue
+    '#8B5CF6', // violet
+];
+
+// Flower shapes for falling
+const flowerShapes = ['❀', '✿', '❁', '✾', '❃', '✽', '✼', '❋'];
+
+// Petal shapes for cursor trail
+const petalShapes = ['✿', '❀', '❁', '✾'];
+
+// Create falling flower (light mode)
+function createFlower() {
+    if (isDarkMode()) return;
+
+    const flower = document.createElement('div');
+    flower.className = 'falling-flower';
+    flower.innerHTML = flowerShapes[Math.floor(Math.random() * flowerShapes.length)];
+    flower.style.left = Math.random() * 100 + 'vw';
+    flower.style.color = petalColors[Math.floor(Math.random() * petalColors.length)];
+    flower.style.fontSize = (14 + Math.random() * 18) + 'px';
+    flower.style.animationDuration = (10 + Math.random() * 10) + 's';
+    flower.style.opacity = 0.5 + Math.random() * 0.4;
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, 20000);
+}
+
+// Create falling star (dark mode)
+function createStar() {
+    if (!isDarkMode()) return;
+
+    const star = document.createElement('div');
+    star.className = 'falling-star';
+    star.innerHTML = '★';
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.color = starColors[Math.floor(Math.random() * starColors.length)];
+    star.style.fontSize = (12 + Math.random() * 16) + 'px';
+    star.style.animationDuration = (8 + Math.random() * 8) + 's';
+    star.style.opacity = 0.6 + Math.random() * 0.4;
+
+    document.body.appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 16000);
+}
+
+// Create cursor trail particle
+let lastTrailTime = 0;
+const trailDelay = 50; // milliseconds between trail particles
+
+function createTrailParticle(x, y) {
+    const now = Date.now();
+    if (now - lastTrailTime < trailDelay) return;
+    lastTrailTime = now;
+
+    const particle = document.createElement('div');
+    particle.className = 'cursor-trail';
+
+    if (isDarkMode()) {
+        particle.innerHTML = '✦';
+        particle.style.color = starColors[Math.floor(Math.random() * starColors.length)];
+        particle.style.fontSize = (8 + Math.random() * 8) + 'px';
+        particle.style.textShadow = '0 0 5px currentColor';
+    } else {
+        particle.innerHTML = petalShapes[Math.floor(Math.random() * petalShapes.length)];
+        particle.style.color = petalColors[Math.floor(Math.random() * petalColors.length)];
+        particle.style.fontSize = (10 + Math.random() * 10) + 'px';
+    }
+
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+
+    // Random drift direction
+    const driftX = (Math.random() - 0.5) * 30;
+    const driftY = 20 + Math.random() * 30;
+    particle.style.setProperty('--drift-x', driftX + 'px');
+    particle.style.setProperty('--drift-y', driftY + 'px');
+    particle.style.setProperty('--rotate', (Math.random() * 360) + 'deg');
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => {
+        particle.remove();
+    }, 1000);
+}
+
+// Track mouse movement for cursor trail
+document.addEventListener('mousemove', (e) => {
+    createTrailParticle(e.clientX, e.clientY);
+});
+
+// Create falling elements periodically
 setInterval(() => {
-  if (isDarkMode()) { if (Math.random() > 0.3) createStar(); }
-  else              { if (Math.random() > 0.3) createFlower(); }
+    if (isDarkMode()) {
+        if (Math.random() > 0.3) createStar();
+    } else {
+        if (Math.random() > 0.3) createFlower();
+    }
 }, 1500);
 
-// Initial burst
+// Create initial falling elements
 for (let i = 0; i < 5; i++) {
-  setTimeout(() => isDarkMode() ? createStar() : createFlower(), i * 500);
+    setTimeout(() => {
+        if (isDarkMode()) {
+            createStar();
+        } else {
+            createFlower();
+        }
+    }, i * 500);
 }
+
