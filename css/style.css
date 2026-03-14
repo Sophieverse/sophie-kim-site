@@ -361,9 +361,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 2.5rem 3rem;
+  padding: 2.5rem 0;
 }
 
 .ornament-line {
@@ -373,7 +371,7 @@ nav.scrolled {
 }
 
 .ornament-sym {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   color: var(--text);
   flex-shrink: 0;
 }
@@ -401,7 +399,6 @@ nav.scrolled {
 /* ==================== ABOUT ==================== */
 
 .about-section {
-  border-bottom: 1px solid var(--border);
 }
 
 .about-grid {
@@ -504,7 +501,6 @@ nav.scrolled {
 /* ==================== WORK / TRACK RECORD ==================== */
 
 .work-section {
-  border-bottom: 1px solid var(--border);
 }
 
 .work-intro {
@@ -973,7 +969,6 @@ footer {
 /* ==================== MEDIA / PRESS ==================== */
 
 .media-section {
-  border-bottom: 1px solid var(--border);
 }
 
 .media-grid {
@@ -1063,7 +1058,7 @@ footer {
 
   .section-inner { padding: 0 2rem 4rem; }
 
-  .section-ornament { padding: 2rem; }
+  .section-ornament { padding: 2rem 0; }
 
   .featured-inner { padding: 4rem 2rem; }
 
@@ -1097,7 +1092,7 @@ footer {
   .deck-col-stats { grid-template-columns: 1fr 1fr; }
   .featured-inner { padding: 3rem 1.5rem; }
   .section-inner { padding: 0 1.5rem 3.5rem; }
-  .section-ornament { padding: 1.75rem 1.5rem; }
+  .section-ornament { padding: 1.75rem 0; }
   .contact-inner { padding: 3rem 1.5rem; }
   .container { padding: 0 1.5rem; }
   .essay-page { padding: 7rem 0 4rem; }
