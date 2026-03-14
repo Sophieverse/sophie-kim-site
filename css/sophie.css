@@ -122,9 +122,9 @@ nav.scrolled {
 }
 
 .masthead-name {
-  font-family: 'IM Fell DW Pica', Georgia, serif;
+  font-family: 'Special Elite', Georgia, serif;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(3.75rem, 10vw, 8rem);
   letter-spacing: 0.02em;
   line-height: 1;
@@ -133,7 +133,7 @@ nav.scrolled {
 }
 
 .masthead-sub {
-  font-family: var(--serif);
+  font-family: 'IM Fell DW Pica', Georgia, serif;
   font-style: italic;
   font-size: 1rem;
   color: var(--muted);
