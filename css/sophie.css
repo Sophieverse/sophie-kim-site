@@ -783,6 +783,35 @@ footer {
   max-width: 520px;
 }
 
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.footer-emails {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-email {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.footer-email:hover { opacity: 0.65; }
+
+.footer-email-sep {
+  font-size: 0.5rem;
+  color: var(--accent);
+}
+
 .footer-sig {
   font-family: var(--sans);
   font-size: 0.62rem;
