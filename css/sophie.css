@@ -799,9 +799,9 @@ footer {
 
 .footer-email {
   font-family: var(--sans);
-  font-size: 0.5rem;
-  letter-spacing: 0.06em;
-  color: var(--dim);
+  font-size: 0.42rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
   text-decoration: none;
   text-transform: lowercase;
 }
@@ -809,8 +809,8 @@ footer {
 .footer-email:hover { opacity: 0.65; }
 
 .footer-email-sep {
-  font-size: 0.4rem;
-  color: var(--dim);
+  font-size: 0.35rem;
+  color: var(--accent);
 }
 
 .footer-sig {
