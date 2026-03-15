@@ -799,7 +799,7 @@ footer {
 
 .footer-email {
   font-family: var(--sans);
-  font-size: 0.42rem;
+  font-size: 0.62rem;
   letter-spacing: 0.08em;
   color: var(--accent);
   text-decoration: none;
