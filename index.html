@@ -47,15 +47,53 @@
     .media-card-logo{display:flex;align-items:center;justify-content:center;height:100px;padding:1.5rem;background:#fff;border-bottom:1px solid #c2d0d8;flex-shrink:0}
     .media-card-logo img{max-height:52px;max-width:100%;width:auto;object-fit:contain}
     .media-card-body{display:flex;flex-direction:column;flex:1;padding:1.25rem 1.5rem 1.5rem}
+    .featured-sub{font-family:Georgia,serif;font-style:italic;font-size:1rem;color:#546878;margin:.5rem 0 1.25rem;line-height:1.5}
     .media-card-pub{font-family:system-ui,sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#1e3a8a;margin-bottom:.65rem}
     .media-card-title{font-family:Georgia,serif;font-weight:400;font-style:italic;font-size:1rem;line-height:1.4;color:#1c2024;margin-bottom:.75rem}
     .media-card-desc{font-family:Georgia,serif;font-size:.82rem;line-height:1.75;color:#8aa0ae;margin-bottom:1rem;flex:1}
     .media-card-cta{font-family:system-ui,sans-serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#546878;margin-top:auto}
     @media(max-width:900px){.media-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:600px){.media-grid{grid-template-columns:1fr}.act{grid-template-columns:1fr}}
+  /* Password overlay */
+  #pw-overlay{position:fixed;inset:0;z-index:9999;background:#eef3f6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem}
+  #pw-overlay.hidden{display:none}
+  #pw-overlay .pw-name{font-family:'IM Fell DW Pica',Georgia,serif;font-size:2.4rem;color:#1c2024;letter-spacing:.02em}
+  #pw-overlay .pw-label{font-family:'Special Elite',Georgia,serif;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:#546878}
+  #pw-overlay .pw-form{display:flex;flex-direction:column;align-items:center;gap:.75rem}
+  #pw-overlay input[type=password]{background:transparent;border:none;border-bottom:1.5px solid #1c2024;font-family:Georgia,serif;font-size:1.1rem;color:#1c2024;text-align:center;padding:.4rem .6rem;outline:none;width:120px;letter-spacing:.15em}
+  #pw-overlay input[type=password]::placeholder{color:#c2d0d8;letter-spacing:.05em}
+  #pw-overlay .pw-error{font-family:system-ui,sans-serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#c0392b;min-height:1em}
+  #pw-overlay .pw-ornament{color:#1e3a8a;font-size:1rem}
   </style>
 </head>
 <body>
+
+<div id="pw-overlay">
+  <span class="pw-ornament">✦</span>
+  <div class="pw-name">Sophie Kim</div>
+  <div class="pw-form">
+    <div class="pw-label">Enter password</div>
+    <input type="password" id="pw-input" placeholder="···" autocomplete="off" autofocus>
+    <div class="pw-error" id="pw-error"></div>
+  </div>
+</div>
+<script>
+(function(){
+  if(sessionStorage.getItem('sk_auth')==='1'){document.getElementById('pw-overlay').classList.add('hidden');return;}
+  document.getElementById('pw-input').addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      var _e=[89,119],_k=[42,17],_v=this.value;
+      if(_v.length===_e.length&&[..._v].every(function(c,i){return(c.charCodeAt(0)^_k[i])===_e[i];})){
+        sessionStorage.setItem('sk_auth','1');
+        document.getElementById('pw-overlay').classList.add('hidden');
+      } else {
+        document.getElementById('pw-error').textContent='incorrect';
+        this.value='';
+      }
+    }
+  });
+})();
+</script>
 
 <nav id="main-nav">
   <a href="/" class="nav-home">Sophie Kim</a>
@@ -97,7 +135,7 @@
     <div class="deck-rule"></div>
     <div class="deck-columns">
       <div class="deck-col-text">
-        <p class="deck-lede">Three organizations founded. Each in a different domain. Each before age eighteen. Admitted to Stanford University after applying a year early (fall of junior year). Then: youngest person ever admitted to the ERA Fellowship in Cambridge. Zero AI safety experience to accepted in under two months. Turned 18 one day before starting.</p>
+        <p class="deck-lede">Three organizations founded. Each in a different domain, each before age eighteen. Admitted to Stanford University after applying a year early (fall of junior year). Then: youngest person ever admitted to the ERA Fellowship in Cambridge. Zero AI safety experience to accepted in under two months. Turned 18 one day before starting.</p>
       </div>
       <div class="deck-col-rule"></div>
       <div class="deck-col-stats">
@@ -122,16 +160,7 @@
     </div>
     <a href="https://curiouslysophie.com/posts/i-have-found-a-way-out.html" target="_blank" rel="noopener" class="featured-link">
       <h2 class="featured-title">i have found a way out</h2>
-      <div class="featured-pull-wrap">
-        <div class="featured-pull-deco">&ldquo;</div>
-        <blockquote class="featured-pull">
-          I grew up in a coastal town where the real world was kept out by a mixture of
-          traditionalism, affluence, and emphasis on picture-perfect lifestyles. I was always
-          so desperate for the next thing, and my friends would look at me, bewildered, asking
-          why I was in such a rush. In a few weeks, I will be entering a new chapter.
-          I have been called.
-        </blockquote>
-      </div>
+      <p class="featured-sub">If you read one thing to understand who I am and how I think, make it this.</p>
       <span class="featured-cta">Read the essay &nbsp;&rarr;</span>
     </a>
   </div>
